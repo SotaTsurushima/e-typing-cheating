@@ -18,13 +18,14 @@ time.sleep(2)
 wait = WebDriverWait(driver, 10)
 wait.until(EC.element_to_be_clickable((By.ID, "typing_content")))
 time.sleep(2)
+
 frame2 = driver.find_element(By.XPATH, "//iframe[@id='typing_content']")
 time.sleep(2)
-print(frame2)
+
 driver.switch_to.frame(frame2)
 time.sleep(3)
+
 driver.find_element(By.ID, 'start_btn').click()
-print("click start_btn")
 time.sleep(3)
 
 
