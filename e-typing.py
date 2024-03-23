@@ -6,12 +6,22 @@ from selenium.webdriver.support.ui import WebDriverWait
 import time
 
 # URLだ 飛ぶぞ
-url='https://www.e-typing.ne.jp/roma/check/'
+
+# IT用語用
+# url='https://www.e-typing.ne.jp/roma/variety/business.asp'
+
+# 普通用
+url = 'https://www.e-typing.ne.jp/roma/check/'
 driver = webdriver.Chrome()
 driver.get(url)
 time.sleep(2)
 
 # 今すぐチェック
+
+# IT用語用
+# driver.find_element(By.XPATH, "//a[contains(@title,'IT用語')]").click()
+
+# 普通用
 driver.find_element(By.CLASS_NAME,'edro').click()
 time.sleep(1)
 
