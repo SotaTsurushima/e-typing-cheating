@@ -33,5 +33,6 @@ body_element = driver.find_element(By.TAG_NAME,'body')
 body_element.send_keys(Keys.SPACE)
 time.sleep(3.5)
 
-sentence = driver.find_element_by_xpath('//div[@id="sentenceText"]').text
+# get text
+sentence = driver.find_element(By.XPATH, '//div[@id="sentenceText"]').text
 print(sentence)
