@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 import time
 
-
+# URLだ 飛ぶぞ
 url='https://www.e-typing.ne.jp/roma/check/'
 driver = webdriver.Chrome()
 driver.get(url)
@@ -16,6 +16,7 @@ time.sleep(2)
 
 # modal
 wait = WebDriverWait(driver, 10)
+
 wait.until(EC.element_to_be_clickable((By.ID, "typing_content")))
 time.sleep(2)
 
@@ -28,11 +29,19 @@ time.sleep(3)
 driver.find_element(By.ID, 'start_btn').click()
 time.sleep(3)
 
+
 # game start
 body_element = driver.find_element(By.TAG_NAME,'body')
 body_element.send_keys(Keys.SPACE)
 time.sleep(3.5)
 
-# get text
-sentence = driver.find_element(By.XPATH, '//div[@id="sentenceText"]').text
-print(sentence)
+while True:
+    try:
+        sentences = driver.find_element(By.XPATH, '//div[@id="sentenceText"]').text
+        for sentence in sentences:
+            driver.find_element(By.TAG_NAME, "body").send_keys(sentence)
+        time.sleep(0.3)
+    except:
+        break
+
+time.sleep(20)
