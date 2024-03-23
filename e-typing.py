@@ -28,9 +28,10 @@ time.sleep(3)
 driver.find_element(By.ID, 'start_btn').click()
 time.sleep(3)
 
-
+# game start
 body_element = driver.find_element(By.TAG_NAME,'body')
 body_element.send_keys(Keys.SPACE)
 time.sleep(3.5)
 
-  
+sentence = driver.find_element_by_xpath('//div[@id="sentenceText"]').text
+print(sentence)
