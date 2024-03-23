@@ -6,7 +6,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 import time
 
 # URLだ 飛ぶぞ
-
 # IT用語用
 # url='https://www.e-typing.ne.jp/roma/variety/business.asp'
 
