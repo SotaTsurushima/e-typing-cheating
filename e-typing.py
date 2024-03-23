@@ -4,15 +4,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 import time
+import sys
 
 # URLだ 飛ぶぞ
 # IT用語用
 # url='https://www.e-typing.ne.jp/roma/variety/business.asp'
 
 # 普通用
-url = 'https://www.e-typing.ne.jp/roma/check/'
 driver = webdriver.Chrome()
-driver.get(url)
+driver.get('https://www.e-typing.ne.jp/roma/check/')
 time.sleep(2)
 
 # 今すぐチェック
@@ -47,5 +47,7 @@ while True:
         time.sleep(0.25)
     except:
         break
-
-time.sleep(20)
+      
+time.sleep(10)
+driver.quit()
+sys.exit()
